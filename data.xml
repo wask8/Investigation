@@ -3,29 +3,29 @@
   <arcade>
   </arcade>
   <histoire>
-    <points type="1">
+    <point type="1">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
-    <points type="2">
+    </point>
+    <point type="2">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
-    <points type="3">
+    </point>
+    <point type="3">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
-    <points type="4">
+    </point>
+    <point type="4">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
-    <points type="5">
+    </point>
+    <point type="5">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
-    <points type="6">
+    </point>
+    <point type="6">
       <ville></ville>
       <coordonnees></coordonnees>
-    </points>
+    </point>
   </histoire>
 </carte>
