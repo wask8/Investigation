@@ -1,1 +1,12 @@
+<!ELEMENT carte (arcade)>
+<!ELEMENT arcade (points+)>
+<!ELEMENT point (ville,coordonees)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT coordonnees (#PCDATA)>
 
+
+<!ELEMENT carte (histoire)>
+<!ELEMENT histoire (points+)>
+<!ELEMENT point (ville,coordonees)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT coordonnees (#PCDATA)>
