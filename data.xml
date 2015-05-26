@@ -1,31 +1,10 @@
 <?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
 <carte>
-  <arcade>
-  </arcade>
-  <histoire>
-    <point type="1">
+    <point mode="histoire">
       <ville></ville>
       <coordonnees></coordonnees>
     </point>
-    <point type="2">
-      <ville></ville>
+    <point mode="arcade">
       <coordonnees></coordonnees>
     </point>
-    <point type="3">
-      <ville></ville>
-      <coordonnees></coordonnees>
-    </point>
-    <point type="4">
-      <ville></ville>
-      <coordonnees></coordonnees>
-    </point>
-    <point type="5">
-      <ville></ville>
-      <coordonnees></coordonnees>
-    </point>
-    <point type="6">
-      <ville></ville>
-      <coordonnees></coordonnees>
-    </point>
-  </histoire>
 </carte>
