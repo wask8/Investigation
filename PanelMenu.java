@@ -153,10 +153,9 @@ public class PanelMenu extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Panel à créer
-				//fen.setContentPane(new PanelHistoire(fen));
-				//fen.repaint();
-				//fen.revalidate();
+				fen.setContentPane(new PanelHistoire(fen));
+				fen.repaint();
+				fen.revalidate();
 				
 			}
 		});
