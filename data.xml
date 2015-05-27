@@ -9,3 +9,7 @@
       <coordonnees></coordonnees>
     </point>
 </carte>
+<score>
+    <pseudo></pseudo>
+    <scoreJoueur></scoreJoueur>
+</score>
