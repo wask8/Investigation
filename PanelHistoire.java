@@ -15,8 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class PanelHistoire extends JPanel implements KeyListener {
-
-	private JPanel fond = new JPanel(null);
+	
 	private JPanel panEntete = new JPanel();
 	private JPanel panCarte = new JPanel();
 	private JPanel panScore = new JPanel();
@@ -55,8 +54,6 @@ public class PanelHistoire extends JPanel implements KeyListener {
 		panEntete.add(abandon);
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setBounds((int) a / 1366 * 20, (int) b / 768 * 50,
-				(int) a / 1366 * 170, (int) b / 768 * 30);
 		abandon.setFont(f5);
 		abandon.addActionListener(new ActionListener() {
 
@@ -79,52 +76,61 @@ public class PanelHistoire extends JPanel implements KeyListener {
 
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setBounds(1110, 20, 170, 25);
+		abandon.setBounds(a * 1110 / 1366, b * 20 / 768 , a * 170 / 1366, b * 25 / 768);
 
 		// AJOUT PANEL panCarte ET ELEMENTS
 		panCarte.setLayout(null);
 		panCarte.setOpaque(false);
-		panCarte.setBounds(10, 150, 1050, 620); // AJOUTER RATIO DE PROPORTION
+		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
+				b * 620 / 768); // AJOUTER RATIO DE PROPORTION
 		panCarte.setBackground(Color.red);
 		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
 		panCarte.add(label);
-		label.setBounds(200, 10, 700, 671);
+		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
+				b * 671 / 768);
 
 		// AJOUT PANEL panStat ET ELEMENTS
 		panScore.setLayout(null);
 		panScore.setOpaque(true);
-		panScore.setBounds(1100, 300, 200, 120); // AJOUTER RATIO DE PROPORTION
+		panScore.setBounds(a * 1100 / 1366, b * 300 / 768, a * 200 / 1366,
+				b * 120 / 768);
 
 		// AJOUT PANEL panQuestion ET ELEMENTS
 		panQuestion.setLayout(null);
 		panQuestion.setOpaque(true);
-		panQuestion.setBounds(1100, 500, 200, 120); // AJOUTER RATIO DE
-													// PROPORTION
+		panQuestion.setBounds(a * 1100 / 1366, b * 500 / 768, a * 200 / 1366,
+				b * 120 / 768);
+
 		panQuestion.add(labelQuestion);
 		labelQuestion.setFont(f2);
-		labelQuestion.setBounds(5, 5, 200, 70);
+		labelQuestion.setBounds(a * 5 / 1366, b * 5 / 768, a * 200 / 1366,
+				b * 70 / 768);
 
 		// AJOUT PANEL panLeu ET ELEMENTS
 		panLieu.setLayout(null);
 		panLieu.setOpaque(true);
-		panLieu.setBounds(150, 25, 800, 75); // AJOUTER RATIO DE PROPORTION
+		panLieu.setBounds(a * 150 / 1366, b * 25 / 768, a * 800 / 1366,
+				b * 75 / 768); // AJOUTER RATIO DE PROPORTION
 
 		// SCENARIO
 		label1 = new JLabel(
 				"<HTML><I>Appuyer sur entrée pour demarrer le scenario</I></HTML>");
 		panLieu.add(label1);
-		label1.setBounds(15, 5, 800, 50);
-		addKeyListener(this); // KEYLISTENER NON DETECTE !
+		label1.setBounds(a * 15 / 1366, b * 5 / 768, a * 800 / 1366,
+				b * 50 / 768);
+		label1.addKeyListener(this); // KEYLISTENER NON DETECTE 
 		label1.setFont(f2);
 
 		// AJOUT PANEL panTemps ET ELEMENTS
 		panTemps.setLayout(null);
 		panTemps.setOpaque(true);
-		panTemps.setBounds(1100, 150, 200, 70); // AJOUTER RATIO DE PROPORTION
+		panTemps.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
+				b * 70 / 768);
 		panTemps.add(temps);
 		temps.setFont(f3);
-		temps.setBounds(5, 5, 200, 30);
+		temps.setBounds(a * 5 / 1366, b * 5 / 768, a * 200 / 1366,
+				b * 30 / 768);
 
 		this.add(panEntete);
 		this.add(panCarte);
