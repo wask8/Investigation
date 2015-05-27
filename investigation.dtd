@@ -3,4 +3,6 @@
 <!ATTLIST point mode CDATA "histoire">
 <!ELEMENT ville (#PCDATA)>
 <!ELEMENT coordonnees (#PCDATA)>
-
+<!ELEMENT score (pseudo,scoreJoueur)>
+<!ELEMENT pseudo (#PCDATA)>
+<!ELEMENT scoreJoueur (#PCDATA)>
