@@ -17,30 +17,42 @@ public class GestionXml {
 	
 	 public static void main(String[] args)
 	   {
-	      //On crée un nouvel Element etudiant et on l'ajoute
+	      //On crée un nouvel Element carte et on l'ajoute
 	      //en tant qu'Element de racine
 	      Element carte = new Element("carte");
 	      racine.addContent(carte);
 	      Attribute mode = new Attribute("mode","histoire");
 	      carte.setAttribute(mode);
 	      
+	      //On crée un nouvel Element point et on l'ajoute
+	      //en tant qu'Element de carte
 	      Element point = new Element("point");
 	      carte.addContent(point);
-	      	      
+	      
+	      //On crée un nouvel Element ville et on l'ajoute
+	      //en tant qu'Element de point	      
 	      Element ville = new Element("ville");
 	      ville.setText("Laval");
 	      point.addContent(ville);
 	      
+	      //On crée un nouvel Element coordonnees et on l'ajoute
+	      //en tant qu'Element de point
 	      Element coordonnees = new Element("coordonnees")
 	      coordonnees.setText(/* COORDONNEES */);
 	      point.addContent(coordonnees);
 	      
+	      //On crée un nouvel Element score et on l'ajoute
+	      //en tant qu'Element de racine
 	      Element score = new Element("score");
 	      racine.addContent(score);
 	      
+	      //On crée un nouvel Element pseudo et on l'ajoute
+	      //en tant qu'Element de score
 	      Element pseudo = new Element("pseudo");
 	      score.addContent(pseudo);
 	      
+	      //On crée un nouvel Element scoreJoueur et on l'ajoute
+	      //en tant qu'Element de score
 	      Element scoreJoueur = new Element("scoreJoueur");
 	      score.addContent(scoreJoueur);
 	      
