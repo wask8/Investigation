@@ -5,6 +5,7 @@
       <coordonnees></coordonnees>
     </point>
     <point mode="arcade">
+        <ville></ville>
       <coordonnees></coordonnees>
     </point>
 </carte>
