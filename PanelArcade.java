@@ -19,6 +19,11 @@ import java.text.AttributedCharacterIterator;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import mjkl.investigation.main.Chrono;
+import mjkl.investigation.running.ChronoPanel;
+import mjkl.investigation.running.ChronoTime;
+import mjkl.investigation.running.TimerB;
+
 public class PanelArcade extends JPanel {
 
 	private JPanel fond = new JPanel(null);
@@ -30,10 +35,8 @@ public class PanelArcade extends JPanel {
 	private JPanel panTemps = new JPanel();
 	private JLabel titre = new JLabel("Investigation");
 	private JButton abandon = new JButton("Abandonner la partie");
-	private JLabel labelQuestion = new JLabel("<HTML>Question<br/>données XML</HTML>");
-	private JLabel temps = new JLabel("<HTML>Temps restant<br/>Fonction chrono</HTML>");
-	private JLabel score = new JLabel("<HTML>Score<br/>données XML</HTML>");
-	private JLabel zoneLieu = new JLabel("Lieu à placer : XML");
+	
+	private ChronoPanel chrono = new ChronoPanel();
 
 	public PanelArcade(final Fenetre fen) {
 		// FENETRE GLOBALE
@@ -61,86 +64,65 @@ public class PanelArcade extends JPanel {
 		panEntete.add(abandon);
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
+		abandon.setBounds((int) a / 1366 * 20, (int) b / 768 * 50,
+				(int) a / 1366 * 170, (int) b / 768 * 30);
 		abandon.setFont(f5);
 		abandon.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelMenu(fen));
-				fen.repaint();
-				fen.revalidate();
+				new Popup(fen, a, b);
+
 			}
 		});
-		
-
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				new Popup(fen, a, b);
-//
-//			}
-//		});
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setBounds(a*1110/1366, b*20/768, a*170/1366, b*25/768);
+		abandon.setBounds(1110, 20, 170, 25);
 		abandon.setFont(f5);
 
 		// AJOUT PANEL panCarte ET ELEMENTS
 		panCarte.setLayout(null);
 		panCarte.setOpaque(false);
-		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
-				b * 620 / 768); 
+		panCarte.setBounds(10, 100, 1050, 620); // AJOUTER RATIO DE PROPORTION
 		panCarte.setBackground(Color.red);
 		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon("planIUT2.jpg"));
+		label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
 		panCarte.add(label);
-		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
-				b * 671 / 768);
+		label.setBounds(200, 10, 700, 671);
 
 		// AJOUT PANEL panStat ET ELEMENTS
 		panScore.setLayout(null);
 		panScore.setOpaque(true);
-		panScore.setBounds(a * 1100 / 1366, b * 300 / 768, a * 200 / 1366,
-				b * 120 / 768);
-		panScore.add(score);
-		score.setFont(f2);
-		score.setBounds(a * 10/1366, b*5/768, a*200/1366, b*120/768);
+		panScore.setBackground(Color.red);//trouver l'emplacement du panel.
+		panScore.setBounds(1100, 300, 200, 120); // AJOUTER RATIO DE PROPORTION
 
 		// AJOUT PANEL panQuestion ET ELEMENTS
 		panQuestion.setLayout(null);
 		panQuestion.setOpaque(true);
-		panQuestion.setBounds(a * 1100 / 1366, b * 500 / 768, a * 200 / 1366,
-				b * 120 / 768); 
-		panQuestion.add(labelQuestion);
-		labelQuestion.setFont(f2);
-		labelQuestion.setBounds(a * 5 / 1366, b * 5 / 768, a * 200 / 1366,
-				b * 120 / 768);
+		panQuestion.setBounds(1100, 500, 200, 120); // AJOUTER RATIO DE
+													// PROPORTION
 
 		// AJOUT PANEL panLieu ET ELEMENTS
 		panLieu.setLayout(null);
 		panLieu.setOpaque(true);
-		panLieu.setBounds(a * 150 / 1366, b * 25 / 768, a * 800 / 1366,
-				b * 75 / 768); 
-		panLieu.add(zoneLieu);
-		zoneLieu.setFont(f2);
-		zoneLieu.setBounds(a*10/1366,b*10/1366,a*800/1366,b*75/768);
-		
-		// AJOUT PANEL panTemps ET ELEMENTS
-		panTemps.setLayout(null);
-		panTemps.setOpaque(true);
-		panTemps.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
-				b * 70 / 768); 
-		panTemps.add(temps);
-		temps.setFont(f2);
-		temps.setBounds(a * 0 / 1366, b * 0 / 768, a * 200 / 1366,
-				b * 70 / 768);
+		panLieu.setBounds(150, 10, 800, 75); // AJOUTER RATIO DE PROPORTION
 
+		// AJOUT PANEL panTemps ET ELEMENTS
+		panTemps.setOpaque(true);
+		panTemps.setBackground(Color.yellow);
+		panTemps.setBounds(1100, 150, 200, 70); // AJOUTER RATIO DE PROPORTION
+		panTemps.add(new JProgressBar());
+		
+		chrono.setOpaque(true);
+		chrono.setBounds(1100,150,200,70);
+		
+		
 		this.add(panEntete);
 		this.add(panCarte);
 		this.add(panQuestion);
 		this.add(panScore);
-		this.add(panTemps);
 		this.add(panLieu);
-		this.add(panTemps);
+		this.add(chrono);
 
 	}
 
