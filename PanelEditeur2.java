@@ -61,9 +61,11 @@ public class PanelEditeur2 extends JPanel {
 		panTitre.setBounds(0, 0, a, (int) (b / 4));
 		panTitre.setOpaque(false);
 		panTitre.add(titre);
-		titre.setBounds(470, 20, 800, 70);
+		titre.setBounds(a * 470 / 1366, b * 20 / 768, a * 800 / 1366,
+				b * 70 / 768);
 		panTitre.add(soustitre);
-		soustitre.setBounds(450, 100, 800, 70);
+		soustitre.setBounds(a * 450 / 1366, b * 100 / 768, a * 800 / 1366,
+				b * 70 / 768);
 		titre.setFont(f0);
 		titre.setForeground(new Color(180, 187, 191)); // 180,187,191
 		soustitre.setFont(f1);
@@ -71,73 +73,73 @@ public class PanelEditeur2 extends JPanel {
 
 		// AJOUT PANEL panInstruction ET ELEMENTS
 		panInstruction.setLayout(null);
-		panInstruction.setBounds(0, b / 9 * 2, a, b / 4 * 3);
+		panInstruction.setBounds(0, b * 2 / 9, a, b * 3 / 4);
 		panInstruction.setOpaque(false);
 
 		panInstruction.add(etape);
-		etape.setBounds(50, 0, 500, 30);
+		etape.setBounds(a*50/1366, 0, a*500/1366, b*30/768);
 		etape.setFont(f2);
 		etape.setForeground(new Color(180, 187, 191));
 
 		panInstruction.add(carte);
-		carte.setBounds(150, 50, 300, 30);
+		carte.setBounds(a*150/1366, b*50/768, a*300/1366, b*30/768);
 		carte.setFont(f2);
 		carte.setForeground(new Color(180, 187, 191));
 
 		panInstruction.add(img);
-		img.setBounds(100, 85, 420, 435);
+		img.setBounds(a*100/1366, b*85/768, a*420/1366, b*435/768);
 
 		panInstruction.add(indication1);
-		indication1.setBounds(750, 50, 400, 30);
+		indication1.setBounds(a*750/1366, b*50/768, a*400/1366, b*30/768);
 		indication1.setFont(f2);
 		indication1.setForeground(new Color(180, 187, 191));
 
 		panInstruction.add(nomlieu);
-		nomlieu.setBounds(750, 100, 500, 30);
+		nomlieu.setBounds(a*750/1366, b*100/768, a*500/1366, b*30/768);
 		nomlieu.setFont(f2);
 
 		panInstruction.add(indication2);
-		indication2.setBounds(750, 150, 600, 70);
+		indication2.setBounds(a*750/1366, b*150/768, a*600/1366, b*70/768);
 		indication2.setFont(f2);
 		indication2.setForeground(new Color(180, 187, 191));
 
 		// AJOUT PANEL panBouton ET ELEMENTS
 		panBouton.setLayout(null);
-		panBouton.setBounds(a / 2, b / 9 * 5, a / 2, b / 9 * 4);
+		panBouton.setBounds(a / 2, b  * 5/ 9, a / 2, b * 4/ 9 );
 		panBouton.setOpaque(false);
 
 		panBouton.add(boutonVal);
-		boutonVal.setBounds(0, 30, 250, 50);
+		boutonVal.setBounds(0, b*30/768, a*250/1366, b*50/768);
 		boutonVal.setFont(f3);
 		boutonVal.setForeground(new Color(180, 187, 191));
 		boutonVal.setBackground(Color.darkGray);
 
 		panBouton.add(boutonAnnuDernier);
-		boutonAnnuDernier.setBounds(300, 30, 250, 50);
+		boutonAnnuDernier.setBounds(a*300/1366, b*30/768, a*250/1366, b*50/768);
 		boutonAnnuDernier.setFont(f3);
 		boutonAnnuDernier.setForeground(new Color(180, 187, 191));
 		boutonAnnuDernier.setBackground(Color.darkGray);
 
 		panBouton.add(boutonNew);
-		boutonNew.setBounds(0, 110, 250, 50);
+		boutonNew.setBounds(0, b*110/768, a*250/1366, b*50/768);
 		boutonNew.setFont(f3);
 		boutonNew.setForeground(new Color(180, 187, 191));
 		boutonNew.setBackground(Color.darkGray);
 
 		panBouton.add(boutonAnnu);
-		boutonAnnu.setBounds(300, 110, 250, 50);
+		boutonAnnu.setBounds(a*300/1366, b*110/768, a*250/1366, b*50/768);
 		boutonAnnu.setFont(f3);
 		boutonAnnu.setForeground(new Color(180, 187, 191));
 		boutonAnnu.setBackground(Color.darkGray);
 
 		panBouton.add(liste);
-		liste.setBounds(0, 190, 250, 50);
+		liste.setBounds(0, b*190/768, a*250/1366, b*50/768);
 		liste.setFont(f3);
 		liste.setForeground(new Color(180, 187, 191));
 		liste.setBackground(Color.darkGray);
 
 		panBouton.add(boutonSauv);
-		boutonSauv.setBounds(300, 190, 250, 50);
+		boutonSauv.setBounds(a*300/1366, b*190/768, a*250/1366, b*50/768);
 		boutonSauv.setFont(f3);
 		boutonSauv.setForeground(new Color(180, 187, 191));
 		boutonSauv.setBackground(Color.darkGray);
