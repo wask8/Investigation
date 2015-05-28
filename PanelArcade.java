@@ -57,52 +57,64 @@ public class PanelArcade extends JPanel {
 		panEntete.add(abandon);
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setBounds((int) a / 1366 * 20, (int) b / 768 * 50,
-				(int) a / 1366 * 170, (int) b / 768 * 30);
 		abandon.setFont(f5);
 		abandon.addActionListener(new ActionListener() {
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Popup(fen, a, b);
-
+				fen.setContentPane(new PanelMenu(fen));
+				fen.repaint();
+				fen.revalidate();
 			}
 		});
+		
+
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				new Popup(fen, a, b);
+//
+//			}
+//		});
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setBounds(1110, 20, 170, 25);
+		abandon.setBounds(a*1110/1366, b*20/768, a*170/1366, b*25/768);
 		abandon.setFont(f5);
 
 		// AJOUT PANEL panCarte ET ELEMENTS
 		panCarte.setLayout(null);
 		panCarte.setOpaque(false);
-		panCarte.setBounds(10, 100, 1050, 620); // AJOUTER RATIO DE PROPORTION
+		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
+				b * 620 / 768); 
 		panCarte.setBackground(Color.red);
 		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
 		panCarte.add(label);
-		label.setBounds(200, 10, 700, 671);
+		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
+				b * 671 / 768);
 
 		// AJOUT PANEL panStat ET ELEMENTS
 		panScore.setLayout(null);
 		panScore.setOpaque(true);
-		panScore.setBounds(1100, 300, 200, 120); // AJOUTER RATIO DE PROPORTION
+		panScore.setBounds(a * 1100 / 1366, b * 300 / 768, a * 200 / 1366,
+				b * 120 / 768);
 
 		// AJOUT PANEL panQuestion ET ELEMENTS
 		panQuestion.setLayout(null);
 		panQuestion.setOpaque(true);
-		panQuestion.setBounds(1100, 500, 200, 120); // AJOUTER RATIO DE
-													// PROPORTION
+		panQuestion.setBounds(a * 1100 / 1366, b * 500 / 768, a * 200 / 1366,
+				b * 120 / 768); 
 
 		// AJOUT PANEL panLieu ET ELEMENTS
 		panLieu.setLayout(null);
 		panLieu.setOpaque(true);
-		panLieu.setBounds(150, 10, 800, 75); // AJOUTER RATIO DE PROPORTION
-
+		panLieu.setBounds(a * 150 / 1366, b * 25 / 768, a * 800 / 1366,
+				b * 75 / 768); 
+		
 		// AJOUT PANEL panTemps ET ELEMENTS
 		panTemps.setLayout(null);
 		panTemps.setOpaque(true);
-		panTemps.setBounds(1100, 150, 200, 70); // AJOUTER RATIO DE PROPORTION
+		panTemps.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
+				b * 70 / 768); // AJOUTER RATIO DE PROPORTION
 
 		this.add(panEntete);
 		this.add(panCarte);
