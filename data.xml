@@ -2,18 +2,15 @@
 <investigation>
 <carte>
     <point modeJeu="histoire">
-        <difficulte modeDifficulte="facile">
-            <ville></ville>
-            <coordonnees></coordonnees>
-        </difficulte>
-        <difficulte modeDifficulte="difficile">
-            <ville></ville>
-            <coordonnees></coordonnees>
-        </difficulte>
+        <question></question>
+        <ville></ville>
+        <coordonnees pos="x"></coordonnees>
+        <coordonnees pos="y"></coordonnees>
     </point>
     <point mode="arcade">
         <ville></ville>
-        <coordonnees></coordonnees>
+        <coordonnees pos="x"></coordonnees>
+        <coordonnees pos="y"></coordonnees>
     </point>
 </carte>
 <score>
