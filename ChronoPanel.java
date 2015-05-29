@@ -12,7 +12,7 @@ import javax.swing.Timer;
 public class ChronoPanel extends JPanel{
 
 	private JButton start = new JButton("Start");
-	private JLabel label1 = new JLabel("Temps restant : 30s");
+	private JLabel label1 = new JLabel("Temps restant : 20s");
 	private JProgressBar bar = new JProgressBar();
 	
 	public ChronoPanel(){
@@ -33,9 +33,9 @@ public class ChronoPanel extends JPanel{
 	}
 	
 	private class SecondListener implements ActionListener{
-		int seconde=30;
+		int seconde=20;
 		Timer timer;
-		private int value = 90;
+		private int value = 100;
 		
 		
 		
@@ -47,7 +47,7 @@ public class ChronoPanel extends JPanel{
 
 		public void actionPerformed(ActionEvent e) {
 			seconde--;
-			value-=3;
+			value-=5;
 			ChronoPanel.this.label1.setText("Temps restant: "+seconde+"s");
 			bar.setValue(value);
 			if(seconde<=0){
