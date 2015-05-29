@@ -1,6 +1,8 @@
 <!ELEMENT carte (point+)>
-<!ELEMENT point (ville,coordonees)>
-<!ATTLIST point mode CDATA "histoire">
+<!ELEMENT point (difficulte)>
+<!ATTLIST point modeJeu CDATA "arcade">
+<!ELEMENT difficulte(ville,coordonees)>
+<!ATTLIST difficulte modeDifficulte CDATAT "facile">
 <!ELEMENT ville (#PCDATA)>
 <!ELEMENT coordonnees (#PCDATA)>
 <!ELEMENT score (pseudo,scoreJoueur)>
