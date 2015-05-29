@@ -46,9 +46,6 @@ public class GestionScoreXml {
 	    System.out.println("\n*************RACINE************");
 	    System.out.println(racine.getNodeName());
 		
-	    /*
-	     * Etape 5 : récupération des personnes
-	     */
 	    final NodeList racineNoeuds = racine.getChildNodes();
 	    final int nbRacineNoeuds = racineNoeuds.getLength();
 			
@@ -61,7 +58,7 @@ public class GestionScoreXml {
 		    System.out.println("mode : " + score.getAttribute("mode"));
 			
 	    	    /*
-		     * Etape 6 : récupération du nom et du prénom
+		     * Etape 6 : récupération du score et pseudo
 		     */
 		    final Element pseudo = (Element) score.getElementsByTagName("pseudo").item(0);
 		    final Element scoreJoueur = (Element) score.getElementsByTagName("scoreJoueur").item(0);
@@ -70,19 +67,6 @@ public class GestionScoreXml {
 		    System.out.println("pseudo : " + pseudo.getTextContent());
 		    System.out.println("score du joueur : " + scoreJoueur.getTextContent());
 					
-		    /*
-		     * Etape 7 : récupération des numéros de téléphone
-		    
-		    final NodeList telephones = personne.getElementsByTagName("telephone");
-		    final int nbTelephonesElements = telephones.getLength();
-					
-		    for(int j = 0; j<nbTelephonesElements; j++) {
-		        final Element telephone = (Element) telephones.item(j);
-		    
-                        //Affichage du téléphone
-                        System.out.println(telephone.getAttribute("type") + " : " + telephone.getTextContent());
-		    }
-		     */
 	        }				
 	    }			
         }
