@@ -7,7 +7,7 @@
         <coordonnees pos="x"></coordonnees>
         <coordonnees pos="y"></coordonnees>
     </point>
-    <point mode="arcade">
+    <point modeJeu="arcade">
         <ville></ville>
         <coordonnees pos="x"></coordonnees>
         <coordonnees pos="y"></coordonnees>
