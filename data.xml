@@ -1,13 +1,19 @@
 <?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
 <investigation>
 <carte>
-    <point mode="histoire">
-      <ville></ville>
-      <coordonnees></coordonnees>
+    <point modeJeu="histoire">
+        <difficulte modeDifficulte="facile">
+            <ville></ville>
+            <coordonnees></coordonnees>
+        </difficulte>
+        <difficulte modeDifficulte="difficile">
+            <ville></ville>
+            <coordonnees></coordonnees>
+        </difficulte>
     </point>
     <point mode="arcade">
         <ville></ville>
-      <coordonnees></coordonnees>
+        <coordonnees></coordonnees>
     </point>
 </carte>
 <score>
