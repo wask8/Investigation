@@ -1,10 +1,12 @@
 # Investigation
 
 README FOR INVESTIGATION GAME BY : L M J K
-__________________________________________________ Lucas 31/05 _____________________________________________________________
+
+
+________________________________ Lucas 31/05 _________________________________________
 Pouvez vous jeter un oeil au PanelHistoire.java y'a un soucis, le KeyListener n'est pas pris en compte dans la partie SCENARIO, ce qui fait que le texte du scenario ne change pas, et que le nombre de questions restantes reste fixe aussi. Tout fonctionne une fois rentré dedans donc le soucis vient pas du KeyPressed mais AVANT. J'ai fait quelques tests pour voir d'où pouvait venir le soucis, il semblerait que ce soit par rapport à l'accumulation de panel sur la page, il ne sait pas lequel cibler (test effectué sur une fenetre avec juste un panel + 2 JLabel (scenario+questions restantes) et ça marche à merveille). Bref j'ai plus d'idée donc je veux bien que vous m'aidiez ^^ 
 
-____________________________________________________________________________________________________________________________
+_______________________________________________________________________________________
 
 Packaging : 
 
