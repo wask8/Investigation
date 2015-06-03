@@ -160,6 +160,9 @@ public class PanelArcade extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		//VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer coordonnées du clic et comparer avec les coordonnées du label
+		
+		
 		//si carte choisie = Carte Mayenne
 		//zoneLieu.setText("Lieu à placer : " + lieuMayenne[i]);
 		//i++;
