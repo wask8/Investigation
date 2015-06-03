@@ -16,10 +16,11 @@ import java.text.AttributedCharacterIterator;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class PanelHistoire extends JPanel implements MouseListener {
+public class PanelHistoire extends JPanel {
 
 	int i = 0, question = 1;
 	String parties[] = {
+			"",
 			"Assistance Eclipse\nBonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval. Préparez-vous, et rendez vous sur Laval et je vous recontacterai une fois arrivé.\nPLACEZ LAVAL",
 			"Assistante Eclipse\nBien, nous y voilà, l’équipe de police nous attend sur la place du 11 Novembre.\nPLACEZ LA PLACE DU 11 NOVEMBRE",
 			"Capitaine Python\nC’est donc vous l’inspecteur ____ ? Bien, sans plus tarder, nous allons nous diriger sur \nles lieux du crime. Vous allez constater les faits par vous-même. \nLe crime a eu lieu à l’Institut Universitaire Technologique. PLACEZ L'IUT",
@@ -45,11 +46,11 @@ public class PanelHistoire extends JPanel implements MouseListener {
 	private JPanel panTemps = new JPanel();
 	private JLabel titre = new JLabel("Investigation");
 	private JButton abandon = new JButton("Abandonner la partie");
-	private JLabel label1 = new JLabel(
-			"Cliquez pour demarrer le scenario");
-	private JTextArea testArea = new JTextArea("");
-	private JLabel labelQuestion = new JLabel(
-			"<HTML><CENTER>Question : \n 0/" + (parties.length-1));
+	private JLabel label1 = new JLabel("Cliquez pour demarrer le scenario");
+	private JTextArea testArea = new JTextArea(
+			"\n\nCliquez sur le point d'interrogation pour demarrer la partie");
+	private JLabel labelQuestion = new JLabel("<HTML><CENTER>Question : \n 0/"
+			+ (parties.length - 1));
 	private JLabel temps = new JLabel("<HTML>Temps restant</HTML>");
 	private ChronoPanel chrono = new ChronoPanel();
 
@@ -98,8 +99,8 @@ public class PanelHistoire extends JPanel implements MouseListener {
 		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
 				b * 620 / 768); // AJOUTER RATIO DE PROPORTION
 		panCarte.setBackground(Color.red);
-		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+		final JLabel label = new JLabel();
+		label.setIcon(new ImageIcon("lol.jpg"));
 		panCarte.add(label);
 		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
 				b * 671 / 768);
@@ -129,24 +130,115 @@ public class PanelHistoire extends JPanel implements MouseListener {
 				b * 100 / 768);
 
 		// SCENARIO
-		/*panLieu.add(label1);
-		label1.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
-				b *100 / 768);
-		label1.setFont(f5);
-		label1.setLayout(new FlowLayout(FlowLayout.LEFT));
-		this.setFocusable(true);
-		this.requestFocus();
-		this.addMouseListener(this);*/
-		
+		/*
+		 * panLieu.add(label1); label1.setBounds(a * 0 / 1366, b * 0 / 768, a *
+		 * 800 / 1366, b *100 / 768); label1.setFont(f5); label1.setLayout(new
+		 * FlowLayout(FlowLayout.LEFT)); this.setFocusable(true);
+		 * this.requestFocus(); this.addMouseListener(this);
+		 */
+
 		panLieu.add(testArea);
 		testArea.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
-				b *100 / 768);
+				b * 100 / 768);
 		testArea.setFont(f5);
 		testArea.setEditable(false);
 		this.setFocusable(true);
 		this.requestFocus();
-		this.addMouseListener(this);
-		
+		this.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				
+				//VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer coordonnées du clic et comparer avec les coordonnées du label
+				if (i == 0) {
+					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+				}
+				if (i == 1) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 2) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 3) {
+					label.setIcon(new ImageIcon("campus.jpg"));
+				}
+				if (i == 4) {
+					label.setIcon(new ImageIcon("planIUT2.jpg"));
+				}
+				if (i == 5) {
+					label.setIcon(new ImageIcon("campus.jpg"));
+				}
+				if (i == 6) {
+					label.setIcon(new ImageIcon("campus.jpg"));
+				}
+				if (i == 7) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 8) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 9) {
+					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+				}
+				if (i == 10) {
+					// si 2 réponses fausses : break
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+					// sinon : i==12
+				}
+				if (i == 11) {
+					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+				}
+				if (i == 12) {
+					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+				}
+				if (i == 13) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 14) {
+					label.setIcon(new ImageIcon("lol.jpg"));
+				}
+				if (i == 15) {
+					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+				}
+				if (i == 16) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+				if (i == 17) {
+					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
+				}
+
+				i++;
+				testArea.setText(parties[i]);
+				labelQuestion.setText("<HTML>Question :<BR/><HTML> " + question
+						+ "/" + (parties.length - 1));
+				question++;
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+		});
 
 		// AJOUT PANEL panTemps ET ELEMENTS
 		panTemps.add(new JProgressBar());
@@ -162,47 +254,6 @@ public class PanelHistoire extends JPanel implements MouseListener {
 		this.add(panTemps);
 		this.add(panLieu);
 		this.add(chrono);
-
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		i++;
-		testArea.setText(parties[i]);
-		labelQuestion.setText("<HTML>Question :<BR/><HTML> " +question + "/" + (parties.length - 1));
-		question++;
-		if (i == 10) {
-			// si 2 réponses fausses : i++
-			// sinon : i==12
-		}
-
-		if (i == 15) {
-			question--;
-		}
-
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 
