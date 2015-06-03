@@ -20,23 +20,23 @@ public class PanelHistoire extends JPanel implements MouseListener {
 
 	int i = 0, question = 1;
 	String parties[] = {
-			"<HTML><CENTER><B>Assistance Eclipse</B><BR/>Bonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval.<BR/>Préparez-vous, et rendez vous sur Laval et je vous recontacterai une fois arrivé.<BR/> PLACEZ LAVAL</CENTER><HTML>",
-			"<HTML><CENTER><B>Assistante Eclipse</B><BR/>Bien, nous y voilà, l’équipe de police nous attend sur la place du 11 Novembre.<BR/>PLACEZ LA PLACE DU 11 NOVEMBRE</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>C’est donc vous l’inspecteur ____ ? Bien, sans plus tarder, nous allons nous diriger sur les lieux du crime.<BR/>Vous allez constater les faits par vous-même. Le crime a eu lieu à l’Institut Universitaire Technologique.<BR/>PLACEZ L'IUT</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Un témoin a vu une personne s’enfuir en courant. Il semblerait qu’il se dirigeait vers le département informatique.<BR/>PLACEZ LE DEPARTEMENT INFORMATIQUE</CENTER></HTML>",
-			"<HTML><CENTER><B>Assistante Eclipse</B><BR/>Il y a de la lumière dans l’une des salles au premier étage, c’est étrange... Il s’agit de la salle Gotham.<BR/>PLACEZ LA SALLE GOTHAM</CENTER><HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/><I>(au moment d’entrer dans la salle)</I> Une vitre a été brisée ! Quelqu’un cours vers la Bibliothèque Universitaire !<BR/>PLACEZ LA BIBLIOTHEQUE UNIVERSITAIRE</CENTER></HTML>",
-			"<HTML><CENTER><B>Assistante Eclipse</B><BR/><I>(Dehors)</I> Il est parti dans une voiture verte qui se dirige vers l'administration ! Retrouvons-le !<BR/>PLACEZ L'ADMINISTRATION",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Un témoin indique que la voiture se dirige vers la gare ! Vite retrouvons-le.<BR/>PLACEZ LA GARE</CENTER></HTML>",
-			"<HTML><CENTER><B>Assistante Eclipse</B><BR/>La voiture n’est plus là ! Il semblerait qu’elle ait quitté la gare il y a peu, elle se dirige vers le théâtre.<BR/>PLACEZ LE THEATRE</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Non ce n’était pas ici ! La voiture a été signalé à la sortie de la ville et se dirige vers Evron, il faut le retrouver au plus vite !<BR/>PLACEZ EVRON</CENTER></HTML>",
-			/* Si plus de 2 reponses fausses */"<HTML><CENTER><B>Assistante Eclipse</B><BR/>C'est trop tard ! Nous avons pris trop de temps pour retrouver sa trace il s'est enfui.<BR/>VOUS AVEZ PERDU ! Rejoignez votre équipe devant la PREFECTURE</CENTER></HTML>",
-			/* Sinon */"<HTML><CENTER><B>Assistante Eclipse</B><BR/>Il n’est pas loin ! On y est presque, il se dirige vers Mayenne !<BR/>PLACEZ MAYENNE</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Il faut le rattraper ! Il essaye de fuir vers la Manche, ne le laissez pas quitter la Mayenne.<BR/>PLACEZ LE POINT A LA FRONTIERE AVEC LA MANCHE</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Ne bouge plus ! <BR/>Vous êtes en état d’arrestation pour avoir débranché le câble Ethernet et pour délit de fuite ! <BR/>C’est un crime impardonnable ! RENDEZ VOUS A L'HOTEL DE POLICE</CENTER></HTML>",
-			"<HTML><CENTER><B>Suspect Luna</B><BR/>NON NON NON !!  ... Comment avez vous pu me rattraper ?! <BR/>Je me vengerai !</CENTER></HTML>",
-			"<HTML><CENTER><B>Capitaine Python</B><BR/>Bien joué détective ______ !<BR/> Vu votre efficacité, vous ne pouvez qu'etre promu dans notre service, vous devenez Sergent !<BR/>RENDEZ VOUS A LA PREFECTURE POUR FETER VOTRE PROMOTION</CENTER></HTML>",
-			"<HTML><CENTER>A<B>ssistante Eclipse</B><BR/>Félicitations _______ !! <BR/>vous avez réussi avec brio votre mission, nous referons appel à vous rapidement.<BR/>VOUS POUVEZ MAINTENANT DEGUSTER UN REPAS AU SUBWAY</CENTER></HTML>" };
+			"Assistance Eclipse\nBonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval. Préparez-vous, et rendez vous sur Laval et je vous recontacterai une fois arrivé.\nPLACEZ LAVAL",
+			"Assistante Eclipse\nBien, nous y voilà, l’équipe de police nous attend sur la place du 11 Novembre.\nPLACEZ LA PLACE DU 11 NOVEMBRE",
+			"Capitaine Python\nC’est donc vous l’inspecteur ____ ? Bien, sans plus tarder, nous allons nous diriger sur \nles lieux du crime. Vous allez constater les faits par vous-même. \nLe crime a eu lieu à l’Institut Universitaire Technologique. PLACEZ L'IUT",
+			"Capitaine Python\nUn témoin a vu une personne s’enfuir en courant. Il semblerait qu’il se dirigeait vers le département \ninformatique.\nPLACEZ LE DEPARTEMENT INFORMATIQUE",
+			"Assistante Eclipse\nIl y a de la lumière dans l’une des salles au premier étage, c’est étrange... Il s’agit de la salle Gotham.\nPLACEZ LA SALLE GOTHAM",
+			"Capitaine Python\n(au moment d’entrer dans la salle) Une vitre a été brisée ! Quelqu’un cours vers la Bibliothèque \nUniversitaire !\nPLACEZ LA BIBLIOTHEQUE UNIVERSITAIRE",
+			"Assistante Eclipse\n(Dehors) Il est parti dans une voiture verte qui se dirige vers l'administration ! Retrouvons-le !\nPLACEZ L'ADMINISTRATION",
+			"Capitaine Python\nUn témoin indique que la voiture se dirige vers la gare ! Vite retrouvons-le.\nPLACEZ LA GARE",
+			"Assistante Eclipse\nLa voiture n’est plus là ! Il semblerait qu’elle ait quitté la gare il y a peu, elle se dirige vers le théâtre.\nPLACEZ LE THEATRE",
+			"Capitaine Python\nNon ce n’était pas ici ! La voiture a été signalé à la sortie de la ville et se dirige vers Evron, il faut le \nretrouver au plus vite !\nPLACEZ EVRON",
+			/* Si plus de 2 reponses fausses */"Assistante Eclipse\nC'est trop tard ! Nous avons pris trop de temps pour retrouver sa trace il s'est enfui.\nVOUS AVEZ PERDU ! Rejoignez votre équipe devant la PREFECTURE",
+			/* Sinon */"Assistante Eclipse\nIl n’est pas loin ! On y est presque, il se dirige vers Mayenne !\nPLACEZ MAYENNE",
+			"Capitaine Python\nIl faut le rattraper ! Il essaye de fuir vers la Manche, ne le laissez pas quitter la Mayenne.\nPLACEZ LE POINT A LA FRONTIERE AVEC LA MANCHE",
+			"Capitaine Python\nNe bouge plus ! \nVous êtes en état d’arrestation pour avoir débranché le câble Ethernet et pour délit de fuite ! \nC’est un crime impardonnable ! RENDEZ VOUS A L'HOTEL DE POLICE",
+			"Suspect Luna\nNON NON NON !!  ... Comment avez vous pu me rattraper ?! \nJe me vengerai !",
+			"Capitaine Python\nBien joué détective ______ !\n Vu votre efficacité, vous ne pouvez qu'etre promu dans notre service, vous devenez Sergent !\nRENDEZ VOUS A LA PREFECTURE POUR FETER VOTRE PROMOTION",
+			"Assistante Eclipse\nFélicitations _______ !! \nvous avez réussi avec brio votre mission, nous referons appel à vous rapidement.\nVOUS POUVEZ MAINTENANT DEGUSTER UN REPAS AU SUBWAY" };
 	private JPanel panEntete = new JPanel();
 	private JPanel panCarte = new JPanel();
 	private JPanel panScore = new JPanel();
@@ -47,8 +47,9 @@ public class PanelHistoire extends JPanel implements MouseListener {
 	private JButton abandon = new JButton("Abandonner la partie");
 	private JLabel label1 = new JLabel(
 			"Cliquez pour demarrer le scenario");
+	private JTextArea testArea = new JTextArea("");
 	private JLabel labelQuestion = new JLabel(
-			"<HTML><CENTER>Question : <BR/> 0/" + (parties.length-1));
+			"<HTML><CENTER>Question : \n 0/" + (parties.length-1));
 	private JLabel temps = new JLabel("<HTML>Temps restant</HTML>");
 	private ChronoPanel chrono = new ChronoPanel();
 
@@ -62,12 +63,9 @@ public class PanelHistoire extends JPanel implements MouseListener {
 		this.setLayout(null);
 		this.setOpaque(false);
 		this.setBackground(Color.black);
-		Font f0 = new Font("Calibri", Font.PLAIN, 80);
-		Font f1 = new Font("Calibri", Font.PLAIN, 50);
 		Font f2 = new Font("Calibri", Font.PLAIN, 30);
-		Font f3 = new Font("Calibri", Font.PLAIN, 18);
-		Font f4 = new Font("Calibri", Font.PLAIN, 10);
-		Font f5 = new Font("Calibri", Font.PLAIN, 13);
+		Font f3 = new Font("Calibri", Font.PLAIN, 15);
+		Font f5 = new Font("Calibri", Font.PLAIN, 19);
 
 		// AJOUT PANEL panEntete ET ELEMENTS
 		panEntete.setLayout(null);
@@ -78,7 +76,7 @@ public class PanelHistoire extends JPanel implements MouseListener {
 		panEntete.add(abandon);
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
-		abandon.setFont(f5);
+		abandon.setFont(f3);
 		abandon.addActionListener(new ActionListener() {
 
 			@Override
@@ -131,13 +129,24 @@ public class PanelHistoire extends JPanel implements MouseListener {
 				b * 100 / 768);
 
 		// SCENARIO
-		panLieu.add(label1);
+		/*panLieu.add(label1);
 		label1.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
 				b *100 / 768);
 		label1.setFont(f5);
+		label1.setLayout(new FlowLayout(FlowLayout.LEFT));
+		this.setFocusable(true);
+		this.requestFocus();
+		this.addMouseListener(this);*/
+		
+		panLieu.add(testArea);
+		testArea.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
+				b *100 / 768);
+		testArea.setFont(f5);
+		testArea.setEditable(false);
 		this.setFocusable(true);
 		this.requestFocus();
 		this.addMouseListener(this);
+		
 
 		// AJOUT PANEL panTemps ET ELEMENTS
 		panTemps.add(new JProgressBar());
@@ -159,7 +168,7 @@ public class PanelHistoire extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		i++;
-		label1.setText(parties[i]);
+		testArea.setText(parties[i]);
 		labelQuestion.setText("<HTML>Question :<BR/><HTML> " +question + "/" + (parties.length - 1));
 		question++;
 		if (i == 10) {
