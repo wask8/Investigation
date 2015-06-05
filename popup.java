@@ -1,59 +1,82 @@
 package new_investigation;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
 public class Popup extends JDialog {
-	
-	private static final long serialVersionUID = -3088405816054794231L;
+
+	private static final long serialVersionUID = -3737769809307992182L;
+	private JPanel fond = new JPanel();
+	private JLabel titre = new JLabel();
+	private JButton quitter = new JButton("Retour");
+	private JButton valider = new JButton("Valider");
+	private Popup popup = this;
 	private JPanel pan = new JPanel();
-	private JPanel pan2 = new JPanel();
-	private JTextArea text = new JTextArea("Voulez-vous vraiment abandonner?");
-	private JButton btn = new JButton("Oui");
-	private JButton btn2 = new JButton("Non");
+	private int a = 0;
 	
-
-	public Popup( final Fenetre fen, int a, int b) {
-		
-			
-			this.setSize((int)(a/5), (int)(b/5));
-			this.setLayout(null);
-			pan.setBounds(0, 0,(int) (a/10),(int)(b/10-1));
-			pan2.setBounds(0, (int)(b/10),(int) (a/20),(int)(b/50));
-			pan.setLayout(new BorderLayout());
-			btn.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					fen.setContentPane(fen);
-					
-				}
-			});
-			btn2.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					System.exit(0);
-				}
-			});
-			pan.setBackground(Color.DARK_GRAY);
-			text.setEditable(false);
-			pan.add(text,BorderLayout.SOUTH);
-			pan2.setLayout(new GridLayout(1,2,(int)(a/50),0));
-			pan2.add(btn2);
-			pan2.add(btn);
-			this.add(pan);
-			this.add(pan2);
-			this.setBackground(Color.DARK_GRAY);
-			
-			
-	
+	public Popup(Fenetre fen) {
+		a=fen.getWidth();
+		this.setSize((int) (fen.getWidth() / 4), (int) (fen.getHeight() / 4));
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setLocationRelativeTo(fen);
+		this.setUndecorated(true);
+		this.setModal(true);
+		fond.setLayout(null);
+		fond.setBackground(new Color(48, 48, 48));
 
 		
+		valider.setFocusable(false);
+		quitter.setFocusable(false);
+		pan.setOpaque(false);
+
+		titre.setFont(new Font("Calibri", Font.PLAIN, a*18/1366));
+		titre.setText("Voulez-vous vraiment Abandonner?");
+		titre.setForeground(new Color(180, 187, 191));
+		
+
+		pan.setBounds(0,(int)(this.getHeight()/3), this.getWidth(), (int)(this.getHeight()/3));
+		valider.setBounds((int) (this.getWidth() * 2 / 3 - 10), (int) (this.getHeight() * 2 / 3 + 20), (int)(fen.getWidth()*75/1200), (int)(fen.getHeight()*30/675));
+		quitter.setBounds((int) (this.getWidth() * 1 / 3 - 10), (int) (this.getHeight() * 2 / 3 + 20),(int)(fen.getWidth()*75/1200), (int)(fen.getHeight()*30/675));
+
+		
+		valider.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fen.setContentPane(new PanelMenu(fen));
+				fen.revalidate();
+				popup.dispose();
+			}
+		});
+
+		quitter.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				popup.dispose();
+
+			}
+		});
+		
+		
+		pan.add(titre);
+		fond.add(pan);
+		fond.add(valider);
+		fond.add(quitter);
+		this.add(fond);
+
+		this.setVisible(true);
+
 	}
-
-	
 
 }
