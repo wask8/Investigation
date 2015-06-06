@@ -36,7 +36,8 @@ public class PanelArcade extends JPanel implements MouseListener {
 	private JLabel labelQuestion = new JLabel(
 			"<HTML>Nombre de <br/>questions</HTML>");
 	private JLabel score = new JLabel("<HTML>Score<br/>données XML</HTML>");
-	private JLabel zoneLieu = new JLabel("Cliquez pour afficher les lieux à placer");
+	private JLabel zoneLieu = new JLabel(
+			"Cliquez pour afficher les lieux à placer");
 	private ChronoPanel chrono = new ChronoPanel();
 
 	public PanelArcade(final Fenetre fen) {
@@ -63,30 +64,18 @@ public class PanelArcade extends JPanel implements MouseListener {
 		panEntete.setOpaque(false);
 		panEntete.add(titre);
 		panEntete.add(abandon);
-		abandon.setLayout(null);
-		abandon.setOpaque(true);
 		abandon.setFont(f5);
 		abandon.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelMenu(fen));
-				fen.repaint();
+				Popup pop = new Popup(fen);
 				fen.revalidate();
 			}
 		});
-
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		// new Popup(fen, a, b);
-		//
-		// }
-		// });
 		abandon.setLayout(null);
 		abandon.setOpaque(true);
 		abandon.setBounds(a * 1110 / 1366, b * 20 / 768, a * 170 / 1366,
 				b * 25 / 768);
-		abandon.setFont(f5);
 
 		// AJOUT PANEL panCarte ET ELEMENTS
 		panCarte.setLayout(null);
@@ -151,35 +140,50 @@ public class PanelArcade extends JPanel implements MouseListener {
 
 	}
 
-	String lieuMayenne[] = { "LAVAL", "MAYENNE", "EVRON", "ERNEE","CHATEAU GONTIER","CRAON","POINT A LA FRONTIERE AVEC LA MANCHE" }; //AJOUTER LES LIEUX A PLACER SUR LA MAP MAYENNE
-	String lieuLaval[] = {"MAIRIE","PREFECTURE","THEATRE","GARE","IUT","SQUARE DE BOSTON","SALLE POLYVALENTE","PLACE DU 11 NOVEMBRE","CENTRE HOSPITALIER","CATHEDRALE"}; // AJOUTER LES LIEUX A PLACER SUR MAP LAVAL
-	String lieuIUT[] = {"DEPARTEMENT INFO","DEPARTEMENT MMI","DEPARTEMENT TC","DEPARTEMENT TC","ADMINISTRATION","RESTAURANT UNIVERSITAIRE","RESIDENCE LA DORMERIE","AMPHI 1","AMPHI 2"}; //AJOUTER LES LIEUX A PLACER SUR MAP IUT
-	String lieuINFO[] = {""};//AJOUTER LIEUX A PLACER SUR MAP DepINFO
-	
+	String lieuMayenne[] = { "LAVAL", "MAYENNE", "EVRON", "ERNEE",
+			"CHATEAU GONTIER", "CRAON", "POINT A LA FRONTIERE AVEC LA MANCHE" }; // AJOUTER
+																					// LES
+																					// LIEUX
+																					// A
+																					// PLACER
+																					// SUR
+																					// LA
+																					// MAP
+																					// MAYENNE
+	String lieuLaval[] = { "MAIRIE", "PREFECTURE", "THEATRE", "GARE", "IUT",
+			"SQUARE DE BOSTON", "SALLE POLYVALENTE", "PLACE DU 11 NOVEMBRE",
+			"CENTRE HOSPITALIER", "CATHEDRALE" }; // AJOUTER LES LIEUX A PLACER
+													// SUR MAP LAVAL
+	String lieuIUT[] = { "DEPARTEMENT INFO", "DEPARTEMENT MMI",
+			"DEPARTEMENT TC", "DEPARTEMENT TC", "ADMINISTRATION",
+			"RESTAURANT UNIVERSITAIRE", "RESIDENCE LA DORMERIE", "AMPHI 1",
+			"AMPHI 2" }; // AJOUTER LES LIEUX A PLACER SUR MAP IUT
+	String lieuINFO[] = { "" };// AJOUTER LIEUX A PLACER SUR MAP DepINFO
+
 	int i = 0;
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		//VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer coordonnées du clic et comparer avec les coordonnées du label
-		
-		
-		//si carte choisie = Carte Mayenne
-		//zoneLieu.setText("Lieu à placer : " + lieuMayenne[i]);
-		//i++;
-		//labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuMayenne.length);
-		//si carte choisie = Carte Laval
+		// VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer coordonnées du
+		// clic et comparer avec les coordonnées du label
+
+		// si carte choisie = Carte Mayenne
+		// zoneLieu.setText("Lieu à placer : " + lieuMayenne[i]);
+		// i++;
+		// labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuMayenne.length);
+		// si carte choisie = Carte Laval
 		zoneLieu.setText("Lieu à placer : " + lieuLaval[i]);
 		i++;
-		labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuLaval.length);
-		//si carte choisie = Carte IUT
-		//zoneLieu.setText("Lieu à placer : " + lieuIUT[i]);
-		//i++;
-		//labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuIUT.length);
-		//si carte chosie = Plan DepINFO
-		//zoneLieu.setText("Lieu à placer : " + lieuINFO[i]);
-		//i++;
-		//labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuINFO.length);
-		
+		labelQuestion.setText("<HTML>Question : <BR/>" + i + "/"
+				+ lieuLaval.length);
+		// si carte choisie = Carte IUT
+		// zoneLieu.setText("Lieu à placer : " + lieuIUT[i]);
+		// i++;
+		// labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuIUT.length);
+		// si carte chosie = Plan DepINFO
+		// zoneLieu.setText("Lieu à placer : " + lieuINFO[i]);
+		// i++;
+		// labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuINFO.length);
 
 	}
 
