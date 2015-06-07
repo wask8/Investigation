@@ -1,5 +1,6 @@
-package mjkl.investigation.running;
+package new_investigation;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,12 +15,21 @@ public class ChronoPanel extends JPanel{
 	private JButton start = new JButton("Start");
 	private JLabel label1 = new JLabel("Temps restant : 20s");
 	private JProgressBar bar = new JProgressBar();
+	private JPanel pan1 = new JPanel();
+	private JPanel pan3 = new JPanel();
+	private int i = 0;
 	
 	public ChronoPanel(){
-		add(label1);
+		this.setOpaque(false);
+		this.setLayout(new GridLayout(3,1));
+		pan1.setOpaque(false);
+		pan3.setOpaque(false);
+		pan1.add(label1);
+		add(pan1);
 		start.addActionListener(new Listener2());
-		add(start);
 		add(bar);
+		pan3.add(start);
+		add(pan3);
 	}
 	
 	
@@ -27,8 +37,11 @@ public class ChronoPanel extends JPanel{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			if(i<1){
+				start.setVisible(false);
 			new SecondListener();
-			
+			i++;
+			}
 		}
 	}
 	
