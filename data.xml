@@ -1,16 +1,17 @@
-<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE investigation[
-!ELEMENT investigation (carte,score)
-!ELEMENT carte (point+)
-!ELEMENT point (question,ville,coordonees+)
-!ATTLIST point modeJeu CDATA arcade
-!ELEMENT question (#PCDATA)
-!ELEMENT ville (#PCDATA)
-!ELEMENT coordonnees (#PCDATA)
-!ATTLIST coordonnees pos (x|y) #REQUIRED
-!ELEMENT score (pseudo,scoreJoueur)
-!ELEMENT pseudo (#PCDATA)
-!ELEMENT scoreJoueur (#PCDATA)
+<!ELEMENT investigation (carte+,score+)>
+<!ELEMENT carte (point+)>
+<!ELEMENT point (question,ville,coordonees+)>
+<!ATTLIST point modeJeu CDATA arcade>
+<!ELEMENT question (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT coordonnees (#PCDATA)>
+<!ATTLIST coordonnees pos (x|y) #REQUIRED>
+<!ELEMENT score (pseudo,scoreJoueur)>
+<!ELEMENT pseudo (#PCDATA)>
+<!ELEMENT scoreJoueur (#PCDATA)>
 ]>
 
 <investigation>
@@ -32,3 +33,5 @@
     <scoreJoueur></scoreJoueur>
 </score>
 </investigation>
+
+
