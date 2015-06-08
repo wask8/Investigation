@@ -95,7 +95,6 @@ public class PanelHistoire extends JPanel {
 		panCarte.setOpaque(false);
 		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
 				b * 620 / 768); // AJOUTER RATIO DE PROPORTION
-		panCarte.setBackground(Color.red);
 		final JLabel label = new JLabel();
 		label.setIcon(new ImageIcon("lol.jpg"));
 		panCarte.add(label);
@@ -239,7 +238,7 @@ public class PanelHistoire extends JPanel {
 		// AJOUT PANEL panTemps ET ELEMENTS
 		panTemps.add(new JProgressBar());
 		panTemps.add(chrono);
-		chrono.setOpaque(true);
+		chrono.setOpaque(false);
 		chrono.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
 				b * 60 / 768);
 
