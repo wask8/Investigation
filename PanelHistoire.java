@@ -21,7 +21,7 @@ public class PanelHistoire extends JPanel {
 	int i = 0, question = 1;
 	String parties[] = {
 			"",
-			"Assistance Eclipse\nBonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval. Préparez-vous, et rendez vous sur Laval et je vous recontacterai une fois arrivé.\nPLACEZ LAVAL",
+			"Assistance Eclipse\nBonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval.\nPréparez-vous, et rendez vous sur Laval et je vous recontacterai une fois arrivé.PLACEZ LAVAL",
 			"Assistante Eclipse\nBien, nous y voilà, l’équipe de police nous attend sur la place du 11 Novembre.\nPLACEZ LA PLACE DU 11 NOVEMBRE",
 			"Capitaine Python\nC’est donc vous l’inspecteur ____ ? Bien, sans plus tarder, nous allons nous diriger sur \nles lieux du crime. Vous allez constater les faits par vous-même. \nLe crime a eu lieu à l’Institut Universitaire Technologique. PLACEZ L'IUT",
 			"Capitaine Python\nUn témoin a vu une personne s’enfuir en courant. Il semblerait qu’il se dirigeait vers le département \ninformatique.\nPLACEZ LE DEPARTEMENT INFORMATIQUE",
@@ -44,14 +44,13 @@ public class PanelHistoire extends JPanel {
 	private JPanel panQuestion = new JPanel();
 	private JPanel panLieu = new JPanel();
 	private JPanel panTemps = new JPanel();
+	private JPanel panAvatar = new JPanel();
 	private JLabel titre = new JLabel("Investigation");
 	private JButton abandon = new JButton("Abandonner la partie");
-	private JLabel label1 = new JLabel("Cliquez pour demarrer le scenario");
-	private JTextArea testArea = new JTextArea(
+	private JTextArea zoneScenario = new JTextArea(
 			"\n\nCliquez sur le point d'interrogation pour demarrer la partie");
 	private JLabel labelQuestion = new JLabel("<HTML><CENTER>Question : \n 0/"
 			+ (parties.length - 1));
-	private JLabel temps = new JLabel("<HTML>Temps restant</HTML>");
 	private ChronoPanel chrono = new ChronoPanel();
 
 	public PanelHistoire(final Fenetre fen) {
@@ -66,7 +65,7 @@ public class PanelHistoire extends JPanel {
 		this.setBackground(Color.black);
 		Font f2 = new Font("Calibri", Font.PLAIN, 30);
 		Font f3 = new Font("Calibri", Font.PLAIN, 15);
-		Font f5 = new Font("Calibri", Font.PLAIN, 19);
+		Font f5 = new Font("Calibri", Font.BOLD, 19);
 
 		// AJOUT PANEL panEntete ET ELEMENTS
 		panEntete.setLayout(null);
@@ -79,11 +78,9 @@ public class PanelHistoire extends JPanel {
 		abandon.setOpaque(true);
 		abandon.setFont(f3);
 		abandon.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelMenu(fen));
-				fen.repaint();
+				Popup pop = new Popup(fen);
 				fen.revalidate();
 			}
 		});
@@ -122,6 +119,11 @@ public class PanelHistoire extends JPanel {
 		labelQuestion.setBounds(a * 5 / 1366, b * 5 / 768, a * 200 / 1366,
 				b * 70 / 768);
 
+		// AJOUT PANEL panAvatar ET ELEMENTS
+		panAvatar.setLayout(null);
+		panAvatar.setOpaque(true);
+		panAvatar.setBounds(75,5,50,100);
+
 		// AJOUT PANEL panLeu ET ELEMENTS
 
 		panLieu.setLayout(null);
@@ -129,29 +131,23 @@ public class PanelHistoire extends JPanel {
 		panLieu.setBounds(a * 150 / 1366, b * 5 / 768, a * 800 / 1366,
 				b * 100 / 768);
 
-		// SCENARIO
-		/*
-		 * panLieu.add(label1); label1.setBounds(a * 0 / 1366, b * 0 / 768, a *
-		 * 800 / 1366, b *100 / 768); label1.setFont(f5); label1.setLayout(new
-		 * FlowLayout(FlowLayout.LEFT)); this.setFocusable(true);
-		 * this.requestFocus(); this.addMouseListener(this);
-		 */
-
-		panLieu.add(testArea);
-		testArea.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
+		panLieu.add(zoneScenario);
+		zoneScenario.setBounds(a * 0 / 1366, b * 0 / 768, a * 800 / 1366,
 				b * 100 / 768);
-		testArea.setFont(f5);
-		testArea.setEditable(false);
+		zoneScenario.setFont(f5);
+		zoneScenario.setEditable(false);
 		this.setFocusable(true);
 		this.requestFocus();
 		this.addMouseListener(new MouseListener() {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				
-				//VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer coordonnées du clic et comparer avec les coordonnées du label
+
+				// VERIFIER SI LE CLIC EST FAIT SUR LA CARTE : Recuperer
+				// coordonnées du clic et comparer avec les coordonnées du label
 				if (i == 0) {
 					label.setIcon(new ImageIcon("CarteMayenne.gif"));
+
 				}
 				if (i == 1) {
 					label.setIcon(new ImageIcon("Map_Laval,_Mayenne.jpg"));
@@ -208,7 +204,7 @@ public class PanelHistoire extends JPanel {
 				}
 
 				i++;
-				testArea.setText(parties[i]);
+				zoneScenario.setText(parties[i]);
 				labelQuestion.setText("<HTML>Question :<BR/><HTML> " + question
 						+ "/" + (parties.length - 1));
 				question++;
