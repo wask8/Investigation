@@ -124,9 +124,8 @@ public class PanelArcade extends JPanel implements MouseListener {
 
 		// AJOUT PANEL panTemps ET ELEMENTS
 
-		panTemps.add(new JProgressBar());
-		panTemps.add(chrono);
-		chrono.setOpaque(true);
+		
+		chrono.setOpaque(false);
 		chrono.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
 				b * 60 / 768);
 
