@@ -13,7 +13,7 @@ import javax.swing.Timer;
 
 public class ChronoPanel extends JPanel{
 
-	private JButton start = new JButton("Start");
+	private JButton start = new JButton("Appuyer pour commencer la partie");
 	private JLabel label1 = new JLabel("Temps restant : 20s");
 	private JProgressBar bar = new JProgressBar();
 	private JPanel pan1 = new JPanel();
