@@ -165,8 +165,13 @@ public class PanelArcade extends JPanel implements MouseListener {
 		// i++;
 		// labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuMayenne.length);
 
+		
+		
+		
+		
 		// si carte choisie = Carte Laval
-		int a = (int) this.getWidth();
+		
+	/*	int a = (int) this.getWidth();
 		int b = (int) this.getHeight();
 		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon("planIUT2.jpg"));
@@ -175,6 +180,8 @@ public class PanelArcade extends JPanel implements MouseListener {
 				b * 671 / 768);
 		
 		System.out.println(e.getPoint().x + ", " + e.getPoint().y);
+		
+		//On verifie que le clic a lieu sur la carte  (peut etre à modifier et verifier plutot que le clic a lieu sur un point de la carte ?)
 		if (e.getPoint().x > (a * 205 / 1366)
 				&& e.getPoint().x < (a * 880 / 1366)
 				&& e.getPoint().y > (b * 170 / 768)
@@ -184,6 +191,13 @@ public class PanelArcade extends JPanel implements MouseListener {
 			labelQuestion.setText("<HTML>Question : <BR/>" + i + "/"
 					+ lieuLaval.length);
 		}
+		
+		
+		*/ 
+		
+		
+		
+		
 		// si carte choisie = Carte IUT
 		// zoneLieu.setText("Lieu à placer : " + lieuIUT[i]);
 		// i++;
