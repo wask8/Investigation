@@ -1,5 +1,6 @@
 package new_investigation;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +26,7 @@ public class ChronoPanel extends JPanel{
 		pan1.setOpaque(false);
 		pan3.setOpaque(false);
 		pan1.add(label1);
+		label1.setForeground(new Color(180,187,191));
 		add(pan1);
 		start.addActionListener(new Listener2());
 		add(bar);
@@ -62,6 +64,9 @@ public class ChronoPanel extends JPanel{
 			seconde--;
 			value-=5;
 			ChronoPanel.this.label1.setText("Temps restant: "+seconde+"s");
+			if (seconde==1) {
+				ChronoPanel.this.label1.setText("Temps restant: "+seconde);
+			}
 			bar.setValue(value);
 			if(seconde<=0){
 				timer.stop();
