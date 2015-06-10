@@ -83,11 +83,6 @@ public class PanelArcade extends JPanel implements MouseListener {
 		panCarte.setBounds(a * 10 / 1366, b * 120 / 768, a * 1050 / 1366,
 				b * 620 / 768);
 		panCarte.setBackground(Color.red);
-		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon("planIUT2.jpg"));
-		panCarte.add(label);
-		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
-				b * 671 / 768);
 
 		// AJOUT PANEL panStat ET ELEMENTS
 		panScore.setLayout(null);
@@ -124,7 +119,6 @@ public class PanelArcade extends JPanel implements MouseListener {
 
 		// AJOUT PANEL panTemps ET ELEMENTS
 
-		
 		chrono.setOpaque(false);
 		chrono.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
 				b * 100 / 768);
@@ -170,11 +164,26 @@ public class PanelArcade extends JPanel implements MouseListener {
 		// zoneLieu.setText("Lieu à placer : " + lieuMayenne[i]);
 		// i++;
 		// labelQuestion.setText("<HTML>Question : <BR/>"+i+"/"+lieuMayenne.length);
+
 		// si carte choisie = Carte Laval
-		zoneLieu.setText("Lieu à placer : " + lieuLaval[i]);
-		i++;
-		labelQuestion.setText("<HTML>Question : <BR/>" + i + "/"
-				+ lieuLaval.length);
+		int a = (int) this.getWidth();
+		int b = (int) this.getHeight();
+		JLabel label = new JLabel();
+		label.setIcon(new ImageIcon("planIUT2.jpg"));
+		panCarte.add(label);
+		label.setBounds(a * 200 / 1366, b * 10 / 768, a * 700 / 1366,
+				b * 671 / 768);
+		
+		System.out.println(e.getPoint().x + ", " + e.getPoint().y);
+		if (e.getPoint().x > (a * 205 / 1366)
+				&& e.getPoint().x < (a * 880 / 1366)
+				&& e.getPoint().y > (b * 170 / 768)
+				&& e.getPoint().y < (b * 740 / 768)) {
+			zoneLieu.setText("Lieu à placer : " + lieuLaval[i]);
+			i++;
+			labelQuestion.setText("<HTML>Question : <BR/>" + i + "/"
+					+ lieuLaval.length);
+		}
 		// si carte choisie = Carte IUT
 		// zoneLieu.setText("Lieu à placer : " + lieuIUT[i]);
 		// i++;
