@@ -240,7 +240,7 @@ public class PanelHistoire extends JPanel {
 		panTemps.add(chrono);
 		chrono.setOpaque(false);
 		chrono.setBounds(a * 1100 / 1366, b * 150 / 768, a * 200 / 1366,
-				b * 60 / 768);
+				b * 100 / 768);
 
 		this.add(panEntete);
 		this.add(panCarte);
