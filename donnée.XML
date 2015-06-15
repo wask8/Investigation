@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<données>
+
+	<!--villes-->
+	<!--on peut rajouter des villes comme on veut-->
+	<!--toutes les coordonnées sont à mettre en fonction de la carte et de l'emplacement du point-->
+	
+	<ville_scénario>
+		<nom>Laval</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<ville_scénario>
+		<nom>Chateau-Gontier</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<ville_scénario>
+		<nom>Craon</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<ville_scénario>
+		<nom>Montsur</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<ville_scénario>
+		<nom>Evron</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<ville_scénario>
+		<nom></nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</ville_scénario>
+	
+	<!--lieux-->
+	
+	<lieu_scénario>
+		<nom>IUT</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<lieu_scénario>
+		<nom>Mairie</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<lieu_scénario>
+		<nom>Place du 11 Novembre</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<lieu_scénario>
+		<nom>Chateau</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<lieu_scénario>
+		<nom>Bord de Map</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<lieu_scénario>
+		<nom>???</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</lieu_scénario>
+	
+	<!--Campus-->
+	
+	<campus_scénario>
+		<nom>INFO</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<campus_scénario>
+		<nom>MMI</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<campus_scénario>
+		<nom>TC</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+
+	<campus_scénario>
+		<nom>GB</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<campus_scénario>
+		<nom>BU</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<campus_scénario>
+		<nom>Administration</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<campus_scénario>
+		<nom>???</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</campus_scénario>
+	
+	<!--Salles-->
+	
+	
+	<salle_IUT>
+		<nom>TD2</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</salle_IUT>
+	
+	<salle_IUT>
+		<nom>Nono's WarRomm</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</salle_IUT>
+	
+	<salle_IUT>
+		<nom>Hyrule</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</salle_IUT>
+	
+	<salle_IUT>
+		<nom>Azeroth</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</salle_IUT>
+	
+	<salle_IUT>
+		<nom>Salle Orange</nom>
+		<coordonnéesX></coordonnéesX>
+		<coordonnéesY></coordonnéesY>
+	</salle_IUT>
+	
+	
+	<!--Texte du scénario-->
+	
+	<texte_scénario>
+		<id>1</id>
+		<text>Eclipse : Bonjour jeune stagiaire, la police veut que vous vous rendiez en Mayenne, plus précisément sur Laval. 
+		Préparez-vous, allez sur Laval et je vous recontacterai une fois arrivé.</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>2</id>
+		<text> Eclipse : Bien, nous y voilà, l’équipe de police nous attend sur la place du 11 Novembre.</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>3</id>
+		<text>Capitaine Python : C’est donc vous l’inspecteur [Pseudo] ? Bien, sans plus tarder, nous allons nous diriger sur les lieux du crime. 
+		Vous allez constater les faits par vous-même. Le crime a eu lieu à l’Institut Universitaire Technologique</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>4</id>
+		<text>Capitaine Python : Un témoin a vu une personne s’enfuir en courant. 
+		Il semblerait qu’il se dirigeait vers le département informatique.</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>5</id>
+		<text>Eclipse : Il y a de la lumière dans l’une des salles au premier étage, c’est étrange... Il s’agit de la salle Gotham.</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>6</id>
+		<text> Capitaine Python : (au moment d’entrer dans la salle) Une vitre a été brisée ! Quelqu’un cours en bas !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>7</id>
+		<text>Eclipse : (Dehors) Il est parti dans une voiture verte ! Retrouvons-le !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>8</id>
+		<text>Capitaine Python : Un témoin indique que la voiture se dirige vers la gare ! Vite retrouvons-le</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>9</id>
+		<text>Capitaine Python : Non ce n’était pas ici ! L’individu s’apprête à quitter Laval, retrouvez le vite ! Il se dirige vers Evron ! </text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>10</id>
+		<text> Eclipse : Nous arrivons trop tard ! Il est introuvable !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>11</id>
+		<text>Eclipse : Il n’est pas loin ! On y est presque !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>12</id>
+		<text> Capitaine Python : Il faut le rattraper ! Ne le laissez pas quitter la Mayenne</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>13</id>
+		<text> Kepler : Non vous m’avez rattrapé !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>14</id>
+		<text>Capitaine Python : Ne bouge plus ! Vous êtes en état d’arrestation pour avoir débranché le câble Ethernet ! C’est un crime impardonnable !</text>
+	</texte_scénario>
+	
+	<texte_scénario>
+		<id>15</id>
+		<text> Eclipse : Félicitations, vous avez réussi avec brio.</text>
+	</texte_scénario>
+
+</données>
