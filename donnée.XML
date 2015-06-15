@@ -236,5 +236,14 @@
 		<id>15</id>
 		<text> Eclipse : Félicitations, vous avez réussi avec brio.</text>
 	</texte_scénario>
-
+	
+	<score>
+		<pseudo>test</pseudo>
+		<points>520</points>
+	</score>
+	
+	<score>
+		<pseudo>test2</pseudo>
+		<points>750</points>
+	</score>
 </données>
