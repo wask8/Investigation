@@ -1,26 +1,25 @@
 package new_investigation;
 
-import java.awt.Color;
-import java.awt.Dimension;
-
+import java.awt.GraphicsEnvironment;
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class Fenetre extends JFrame {
-		
+	private GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 	private static final long serialVersionUID = 4371046657672853078L;
-	boolean fullscreen;
+	private boolean fullscreen;
+	private Fenetre fen = this;
+	
 	public Fenetre()  {
-		Dimension dim = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-		int b = (int) dim.getHeight();
-		int a = (int) dim.getWidth();
+		
 		this.setTitle("Investigation");
-		this.setSize(a, b);
-		this.setContentPane(new PanelEntree(this));
+		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setUndecorated(true);
 		fullscreen = true;
 		this.setResizable(false);
-		this.setVisible(true);
+		ge.getDefaultScreenDevice().setFullScreenWindow(this);
+		this.setContentPane(new PanelEntree(this));
 		
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
@@ -28,19 +27,19 @@ public class Fenetre extends JFrame {
 		catch (UnsupportedLookAndFeelException e) {
 			
 		}
+		this.setVisible(true);
 	}
 	
 	public void Fullscreen(Boolean b) {
 		if (b == true){
 			fullscreen = true;
-			Dimension dim = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-			int c = (int) dim.getHeight();
-			int  a = (int) dim.getWidth();
-			this.setSize(a,c);
+			
+			
 			this.setVisible(false);
 			this.dispose();
 			this.setLocationRelativeTo(null);
 			this.setUndecorated(true);
+			ge.getDefaultScreenDevice().setFullScreenWindow(fen);
 			this.setResizable(false);
 			this.setVisible(true);
 			
@@ -49,7 +48,7 @@ public class Fenetre extends JFrame {
 			this.setVisible(false);
 			this.dispose();
 			this.setUndecorated(false);
-			this.setResizable(true);
+			this.setResizable(false);
 			this.setSize(1366, 768);
 			this.setLocationRelativeTo(null);
 			this.setVisible(true);
