@@ -21,6 +21,13 @@ public class Fenetre extends JFrame {
 		fullscreen = true;
 		this.setResizable(false);
 		this.setVisible(true);
+		
+		try {
+			UIManager.setLookAndFeel(new NimbusLookAndFeel());
+		}
+		catch (UnsupportedLookAndFeelException e) {
+			
+		}
 	}
 	
 	public void Fullscreen(Boolean b) {
