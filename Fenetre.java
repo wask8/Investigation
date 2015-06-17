@@ -20,13 +20,6 @@ public class Fenetre extends JFrame {
 		this.setResizable(false);
 		ge.getDefaultScreenDevice().setFullScreenWindow(this);
 		this.setContentPane(new PanelEntree(this));
-		
-		try {
-			UIManager.setLookAndFeel(new NimbusLookAndFeel());
-		}
-		catch (UnsupportedLookAndFeelException e) {
-			
-		}
 		this.setVisible(true);
 	}
 	
