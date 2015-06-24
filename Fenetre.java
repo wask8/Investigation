@@ -1,6 +1,9 @@
 package new_investigation;
 
+import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.util.List;
+
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
@@ -19,8 +22,9 @@ public class Fenetre extends JFrame {
 		fullscreen = true;
 		this.setResizable(false);
 		ge.getDefaultScreenDevice().setFullScreenWindow(this);
-		this.setContentPane(new PanelEntree(this));
+		this.setContentPane(new PanelMenu(this));
 		this.setVisible(true);
+		
 	}
 	
 	public void Fullscreen(Boolean b) {
@@ -32,7 +36,11 @@ public class Fenetre extends JFrame {
 			this.dispose();
 			this.setLocationRelativeTo(null);
 			this.setUndecorated(true);
-			ge.getDefaultScreenDevice().setFullScreenWindow(fen);
+//			if (numero == 1){
+				ge.getDefaultScreenDevice().setFullScreenWindow(this);
+//			}else {
+//				ge.getScreenDevices()[1].setFullScreenWindow(this);
+//			}
 			this.setResizable(false);
 			this.setVisible(true);
 			
@@ -53,6 +61,14 @@ public class Fenetre extends JFrame {
 		return fullscreen;
 	}
 	
+	public GraphicsDevice[] getListScreen() {
+		GraphicsDevice[] list ;
+		list =ge.getScreenDevices();
+		return list;
+		
+	}
+	
+
 
 
 }
