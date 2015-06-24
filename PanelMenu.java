@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,22 +28,33 @@ public class PanelMenu extends JPanel{
 	private int a;
 	private int b;
 	private JPanel panBouton = new JPanel();
-	//private JPanel panBouton2 = new JPanel();
 	private JPanel panBtnQuitter = new JPanel();
 	private JPanel panEntete = new JPanel();
 	private JLabel titre = new JLabel("Investigation");
 	private JButton boutonHistoire = new JButton(
-			"<html><center>JOUER<br>Mode Histoire</center></html>");
+			"<html><center>Mode Histoire</center></html>");
 	private JButton boutonArcade = new JButton(
-			"<html><center>JOUER<br>Mode Arcade</center></html>");
+			"<html><center>Mode Arcade</center></html>");
 	private JButton boutonScore = new JButton("Scores");
 	private JButton boutonOptions = new JButton("Options");
 	private JButton boutonEditeur = new JButton("Editeur");
+	public PanelOptions getOpt() {
+		return opt;
+	}
+
+
+	public void setOpt(PanelOptions opt) {
+		this.opt = opt;
+	}
+
+
 	private JButton boutonQuitter = new JButton("Quitter");
+	private PanelOptions opt;
+	private PanelMenu menu = this;
 	
 	
 	
-	public PanelMenu(Fenetre fen) {
+	public PanelMenu(final Fenetre fen) {
 		//dimension du panel menu
 		
 		 a = (int)(fen.getWidth());
@@ -52,7 +64,7 @@ public class PanelMenu extends JPanel{
 		// fonts et paramï¿½tres boutons
 		Font f0 = new Font("Calibri", Font.PLAIN, a*80/1366);
 		Font f2 = new Font("Calibri", Font.PLAIN, a*18/1366);
-		
+	
 		titre.setFont(f0);
 		titre.setForeground(new Color(180, 187, 191));
 		
@@ -101,7 +113,7 @@ public class PanelMenu extends JPanel{
 		
 		
 		//Disposition des Boutons /textes
-		titre.setBounds( (int)(a*470/1366),(int)(b*50/768) ,(int)(b*900/1366),(int)(a*70/768));
+		titre.setBounds( (int)(a*425/1366),(int)(b*50/768) ,(int)(b*1000/1366),(int)(a*70/768));
 		boutonHistoire.setBounds((int)(a*375/1366),(int)(b*200/768), (int)(a*200/1366),(int)(b*100/768));
 		boutonArcade.setBounds((int)(a*725/1366),(int)(b*200/768), (int)(a*200/1366),(int)(b*100/768));
 		boutonScore.setBounds((int)(a*580/1366),(int)(b*450/768),(int)(a*150/1366),(int)(b*100/768));
@@ -143,7 +155,7 @@ public class PanelMenu extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelArcade2(fen));
+				fen.setContentPane(new PanelChoixCarteArcade(fen,menu,opt));
 				fen.revalidate();
 				
 			}
@@ -153,18 +165,20 @@ public class PanelMenu extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelHistoire(fen));
+				fen.setContentPane(new PanelHistoire(fen, opt, menu));
 				fen.revalidate();
 				
 				
 			}
 		});
 		
+		opt = new PanelOptions(fen,this);
+		
 		boutonOptions.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelOptions(fen));
+				fen.setContentPane(opt);
 				fen.revalidate();
 				
 			}
@@ -173,7 +187,7 @@ public class PanelMenu extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fen.setContentPane(new PanelScore(fen));
+				fen.setContentPane(new PanelScore(fen, menu));
 				fen.revalidate();
 				
 			}
@@ -204,8 +218,9 @@ fen.getRootPane().addComponentListener(new ComponentListener() {
 				
 				Font f0 = new Font("Calibri", Font.PLAIN, a*80/1366);
 				Font f2 = new Font("Calibri", Font.PLAIN, a*18/1366);
-				
-				titre.setBounds( (int)(a*470/1366),(int)(b*50/768) ,(int)(b*800/1366),(int)(a*70/768));
+				int ratiolarg = (int)(a-1.5*a*(0.0732)-1);
+				titre.setBounds( (int)(a*470/1366),(int)(b*50/768) ,(int)(b*1000/1366),(int)(a*70/768));
+				panBtnQuitter.setBounds( ratiolarg+1,(int)(50*b/1080),(int)(a-ratiolarg-50*a/1920),(int)(b/20));
 				boutonHistoire.setBounds((int)(a*375/1366),(int)(b*200/768), (int)(a*200/1366),(int)(b*100/768));
 				boutonArcade.setBounds((int)(a*725/1366),(int)(b*200/768), (int)(a*200/1366),(int)(b*100/768));
 				boutonScore.setBounds((int)(a*580/1366),(int)(b*450/768),(int)(a*150/1366),(int)(b*100/768));
@@ -245,12 +260,10 @@ fen.getRootPane().addComponentListener(new ComponentListener() {
 	//fond d'ecran
 	public void paintComponent(Graphics g) {
 		try {
-			Image img = ImageIO.read(new File("investigation.jpg"));
+			Image img = ImageIO.read(getClass().getResource("investigation.jpg")); 
 			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
-}
+	}
 }
