@@ -23,12 +23,28 @@ public class PanelOptions extends JPanel {
 	private JLabel soustitre = new JLabel("Options");
 	private JLabel pseudo = new JLabel("Votre pseudo : ");
 	private JLabel difficulte = new JLabel("<HTML>Choix de la difficult&eacute; : </HTML>");
-	private JLabel selectscreen = new JLabel("<HTML>S&eacute;lection de l'&Eacute;cran: </HTML>");
+	private JLabel selectscreen = new JLabel("<HTML>S&eacute;lection de l'&eacute;cran: </HTML>");
 	private JTextField zonePseudo = new JTextField("Player");
 	private JTextField sauvzonePseudo = new JTextField("Player");
-	private JRadioButton boxEasy = new JRadioButton("<html>FACILE<br>(20s de temps de r&eacute;ponse)</html>");
+	private JRadioButton boxEasy = new JRadioButton("<html>FACILE</html>");
 	private JRadioButton sauvboxEasy = new JRadioButton();
-	private JRadioButton boxHard = new JRadioButton("<html>DIFFICILE<br>(10s de temps de r&eacute;ponse)</html>");
+	private JRadioButton boxHard = new JRadioButton("<html>DIFFICILE</html>");
+	public JRadioButton getBoxEasy() {
+		return boxEasy;
+	}
+
+	public void setBoxEasy(JRadioButton boxEasy) {
+		this.boxEasy = boxEasy;
+	}
+
+	public JRadioButton getBoxHard() {
+		return boxHard;
+	}
+
+	public void setBoxHard(JRadioButton boxHard) {
+		this.boxHard = boxHard;
+	}
+
 	private JRadioButton sauvboxHard = new JRadioButton();
 	private JButton boutonVal = new JButton("VALIDER");
 	private JButton boutonretour = new JButton("RETOUR");
@@ -45,12 +61,6 @@ public class PanelOptions extends JPanel {
 	private JButton selectnext = new JButton();
 	private int numecran = 0;
 	private int sauvnumecran = 0;
-	private int nivDifficulte = 0;
-	
-
-	// tempo
-	// private JCheckBox ecran2 = new JCheckBox("<HTML> ecran 2 </HTML>");
-	// private JCheckBox ecran1 = new JCheckBox("<HTML> ecran 1 </HTML>");
 
 	public PanelOptions(final Fenetre fen, final PanelMenu panelMenu) {
 		sauvfullscreened.setSelected(fullscreened.isSelected());
@@ -87,7 +97,7 @@ public class PanelOptions extends JPanel {
 		panTexte.setBounds(0, (int) ((b / 4) + 1), (int) (a / 2), (int) (b - (b / 4)));
 		panTexte.setOpaque(false);
 		panTexte.add(pseudo);
-		pseudo.setBounds((int) (a * 370 / 1366), 0, (int) (a * 500 / 1366), (int) (b * 70 / 768));
+		pseudo.setBounds((int) (a * 392 / 1366), 0, (int) (a * 500 / 1366), (int) (b * 70 / 768));
 		pseudo.setFont(f2);
 		pseudo.setForeground(new Color(180, 187, 191));
 		panTexte.add(difficulte);
@@ -104,16 +114,16 @@ public class PanelOptions extends JPanel {
 		selectprev.setBounds((int) (a * 475 / 1366), (int) (b * 165 / 768), (int) (a * 20 / 1366),
 				(int) (b * 20 / 768));
 
-		selectnext.setIcon(new ImageIcon("images/flechedroite.png"));
+		selectnext.setIcon(new ImageIcon(getClass().getResource("flechedroite.png")));
 		selectnext.setBackground(new Color(0, 0, 0, 0));
 		selectnext.setFocusPainted(false);
-		selectnext.setPressedIcon(new ImageIcon("images/flechedroite.png"));
+		selectnext.setPressedIcon(new ImageIcon(getClass().getResource("flechedroite.png")));
 		selectnext.setBorder(null);
 
-		selectprev.setIcon(new ImageIcon("images/flechegauche.png"));
+		selectprev.setIcon(new ImageIcon(getClass().getResource("flechegauche.png")));
 		selectprev.setBackground(new Color(0, 0, 0, 0));
 		selectprev.setFocusPainted(false);
-		selectprev.setPressedIcon(new ImageIcon("images/flechegauche.png"));
+		selectprev.setPressedIcon(new ImageIcon(getClass().getResource("flechegauche.png")));
 		selectprev.setBorder(null);
 		selectscreen.setForeground(new Color(180, 187, 191));
 		selectscreen.setBounds((int) (a * 305 / 1366), (int) (b * 140 / 768), (int) (a * 500 / 1366),
@@ -161,7 +171,7 @@ public class PanelOptions extends JPanel {
 
 		// AJOUT ELEMENT PANEL BOUTON1 (Reponse options)
 		panBouton1.setLayout(null);
-		panBouton1.setBounds((int) (a * 205 / 1366), (int) (b * 200 / 768), (int) (a * 1000 / 1366),
+		panBouton1.setBounds((int) (a * 250 / 1366), (int) (b * 200 / 768), (int) (a * 1000 / 1366),
 				(int) (b * 1000 / 768));
 
 		panBouton1.setOpaque(false);
@@ -276,12 +286,16 @@ public class PanelOptions extends JPanel {
 						boxHard.setSelected(false);
 					}
 				}
-				
-				
 				numecran = sauvnumecran;
 				zonePseudo.setText(sauvzonePseudo.getText());
 				ecran.setText(sauvecran.getText());
+				
+				
+				if (sauvecran.getText() != ecran.getText()){
 				showOnScreen((Integer.parseInt(sauvecran.getText())-1), fen);
+				}
+				
+				
 				fen.setContentPane(panelMenu);
 				fen.revalidate();
 
@@ -436,26 +450,19 @@ public class PanelOptions extends JPanel {
 			throw new RuntimeException("No Screens Found");
 		}
 	}
-	
-	public void GestionDif() {
-		if (boxEasy.isSelected() == true) {
-			nivDifficulte = 1;
-		}else {
-			nivDifficulte = 2;
-		}
-	}
-	public int getNivDifficulte() {
-		return nivDifficulte;
+
+	public JTextField getZonePseudo() {
+		return zonePseudo;
 	}
 
-	public void setNivDifficulte(int nivDifficulte) {
-		this.nivDifficulte = nivDifficulte;
+	public void setZonePseudo(JTextField zonePseudo) {
+		this.zonePseudo = zonePseudo;
 	}
 
 	/* Fond */
 	public void paintComponent(Graphics g) {
 		try {
-			Image img = ImageIO.read(getClass().getResource("investigation.jpg"));
+			Image img = ImageIO.read(getClass().getResource("investigation.jpg")); 
 			g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
 		} catch (IOException e) {
 			e.printStackTrace();
